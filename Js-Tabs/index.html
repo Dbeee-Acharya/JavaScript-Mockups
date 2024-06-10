@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .mobile-table-container {
+            width: 100%;
+        }
+
+        .tab-groups-button {
+            width: 100%;
+            text-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        .tab-button {
+            border: none;
+            font-size: 1em;
+            color: black;
+            background-color: transparent;
+            margin-right: 1.25em;
+            border-right: 1px solid black;
+            padding-right: 1.25em;
+        }
+
+        .tab-button.active {
+            border-bottom: 1px solid red;
+        }
+
+        .tab-groups-table {
+            margin-top: 1em;
+        }
+
+        .tab-group table {
+            text-align: left;
+
+        }
+
+        .tab-group th, .tab-group td {
+            width: 10em;
+        }
+
+        .tab-group {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mobile-table-container">
+        <div class="tab-groups-button">
+            <button class="tab-button">Group 'A'</button>
+            <button class="tab-button">Group 'B'</button>
+            <button class="tab-button">Group 'C'</button>
+            <button class="tab-button">Group 'D'</button>
+            <button class="tab-button">Group 'E'</button>
+            <button class="tab-button">Group 'F'</button>
+        </div>
+        
+        <div class="tab-groups-table">
+            <div class="tab-group">
+                <table>
+                    <tr>
+                      <th>Teams</th>
+                      <th>PLWD</th>
+                      <th>L</th>
+                      <th>GD</th>
+                      <th>Pts</th>
+                    </tr>
+                    <tr>
+                      <td>Germany</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>Hungary</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>Scotland</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                      <tr>
+                      <td>Switzerland</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tab-group">
+                <table>
+                    <tr>
+                      <th>Teams</th>
+                      <th>PLWD</th>
+                      <th>L</th>
+                      <th>GD</th>
+                      <th>Pts</th>
+                    </tr>
+                    <tr>
+                      <td>Germany</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>Hungary</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>Scotland</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                      <tr>
+                      <td>Switzerland</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tab-group">
+                <table>
+                    <tr>
+                      <th>Teams</th>
+                      <th>PLWD</th>
+                      <th>L</th>
+                      <th>GD</th>
+                      <th>Pts</th>
+                    </tr>
+                    <tr>
+                      <td>Germany</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>Hungary</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>Scotland</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                      <tr>
+                      <td>Switzerland</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tableButton = document.querySelectorAll('.tab-button');
+        const table = document.querySelectorAll('.tab-group');
+
+        tableButton.forEach((tab, index)=>{
+                tab.addEventListener('click', ()=>{
+                    tableButton.forEach(tab=>{tab.classList.remove('active')});
+                    tab.classList.add('active');
+                    table.forEach(t=>{t.style.display="none"});
+                    table[index].style.display = "block";
+                })
+        })
+    </script>
+</body>
+</html>
